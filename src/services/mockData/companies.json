@@ -1,0 +1,57 @@
+[
+  {
+    "Id": 1,
+    "name": "TechStart Solutions",
+    "website": "https://techstart.com",
+    "industry": "Software Development",
+    "size": "50-100",
+    "mrr": 12500,
+    "healthScore": 85,
+    "subscriptionTier": "Professional",
+    "createdAt": "2023-08-15T00:00:00Z"
+  },
+  {
+    "Id": 2,
+    "name": "InnovateLab",
+    "website": "https://innovatelab.io",
+    "industry": "AI/ML",
+    "size": "100-250",
+    "mrr": 25000,
+    "healthScore": 92,
+    "subscriptionTier": "Enterprise",
+    "createdAt": "2023-06-20T00:00:00Z"
+  },
+  {
+    "Id": 3,
+    "name": "GrowthCo",
+    "website": "https://growthco.com",
+    "industry": "Marketing Technology",
+    "size": "25-50",
+    "mrr": 8900,
+    "healthScore": 73,
+    "subscriptionTier": "Professional",
+    "createdAt": "2023-09-10T00:00:00Z"
+  },
+  {
+    "Id": 4,
+    "name": "ScaleVault",
+    "website": "https://scalevault.com",
+    "industry": "FinTech",
+    "size": "250-500",
+    "mrr": 45000,
+    "healthScore": 68,
+    "subscriptionTier": "Enterprise",
+    "createdAt": "2023-05-05T00:00:00Z"
+  },
+  {
+    "Id": 5,
+    "name": "DataDrive AI",
+    "website": "https://datadrive.ai",
+    "industry": "Data Analytics",
+    "size": "500+",
+    "mrr": 78000,
+    "healthScore": 95,
+    "subscriptionTier": "Enterprise",
+    "createdAt": "2023-04-12T00:00:00Z"
+  }
+]

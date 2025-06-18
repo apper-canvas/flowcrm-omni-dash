@@ -1,0 +1,52 @@
+[
+  {
+    "Id": 1,
+    "type": "call",
+    "subject": "Discovery Call - Technical Requirements",
+    "description": "Discussed current infrastructure and scaling challenges. Sarah mentioned they're evaluating 3 solutions including ours.",
+    "contactId": 1,
+    "dealId": 1,
+    "date": "2024-01-15T10:30:00Z",
+    "completed": true
+  },
+  {
+    "Id": 2,
+    "type": "email",
+    "subject": "Follow-up: Demo Scheduling",
+    "description": "Sent calendar invite for product demo next week. Michael confirmed availability for Tuesday 2 PM.",
+    "contactId": 2,
+    "dealId": 2,
+    "date": "2024-01-14T14:45:00Z",
+    "completed": true
+  },
+  {
+    "Id": 3,
+    "type": "meeting",
+    "subject": "Product Demo - Core Features",
+    "description": "Demonstrated key platform features. Emily showed strong interest in analytics dashboard and integration capabilities.",
+    "contactId": 3,
+    "dealId": 3,
+    "date": "2024-01-13T09:15:00Z",
+    "completed": true
+  },
+  {
+    "Id": 4,
+    "type": "call",
+    "subject": "Budget and Timeline Discussion",
+    "description": "David confirmed budget approval process requires board review. Timeline pushed to Q2 due to internal restructuring.",
+    "contactId": 4,
+    "dealId": 4,
+    "date": "2024-01-12T16:20:00Z",
+    "completed": true
+  },
+  {
+    "Id": 5,
+    "type": "meeting",
+    "subject": "Contract Signing",
+    "description": "Successfully closed the deal! Lisa signed the annual contract. Implementation starts next month.",
+    "contactId": 5,
+    "dealId": 5,
+    "date": "2024-01-11T11:30:00Z",
+    "completed": true
+  }
+]

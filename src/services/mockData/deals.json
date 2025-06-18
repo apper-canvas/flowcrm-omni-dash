@@ -1,0 +1,57 @@
+[
+  {
+    "Id": 1,
+    "title": "TechStart Annual Upgrade",
+    "value": 150000,
+    "stage": "Negotiation",
+    "probability": 75,
+    "contactId": 1,
+    "companyId": 1,
+    "closeDate": "2024-02-15T00:00:00Z",
+    "ownerId": "user1"
+  },
+  {
+    "Id": 2,
+    "title": "InnovateLab Enterprise Migration",
+    "value": 300000,
+    "stage": "Demo",
+    "probability": 60,
+    "contactId": 2,
+    "companyId": 2,
+    "closeDate": "2024-03-01T00:00:00Z",
+    "ownerId": "user1"
+  },
+  {
+    "Id": 3,
+    "title": "GrowthCo Product Suite",
+    "value": 85000,
+    "stage": "Qualified",
+    "probability": 40,
+    "contactId": 3,
+    "companyId": 3,
+    "closeDate": "2024-02-28T00:00:00Z",
+    "ownerId": "user2"
+  },
+  {
+    "Id": 4,
+    "title": "ScaleVault Integration Project",
+    "value": 500000,
+    "stage": "Lead",
+    "probability": 25,
+    "contactId": 4,
+    "companyId": 4,
+    "closeDate": "2024-04-30T00:00:00Z",
+    "ownerId": "user1"
+  },
+  {
+    "Id": 5,
+    "title": "DataDrive Expansion",
+    "value": 200000,
+    "stage": "Closed",
+    "probability": 100,
+    "contactId": 5,
+    "companyId": 5,
+    "closeDate": "2024-01-10T00:00:00Z",
+    "ownerId": "user2"
+  }
+]

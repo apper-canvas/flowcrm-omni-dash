@@ -1,0 +1,57 @@
+[
+  {
+    "Id": 1,
+    "firstName": "Sarah",
+    "lastName": "Johnson",
+    "email": "sarah.johnson@techstart.com",
+    "phone": "+1 (555) 123-4567",
+    "title": "VP of Engineering",
+    "companyId": 1,
+    "lastActivity": "2024-01-15T10:30:00Z",
+    "tags": ["technical-decision-maker", "priority"]
+  },
+  {
+    "Id": 2,
+    "firstName": "Michael",
+    "lastName": "Chen",
+    "email": "m.chen@innovatelab.io",
+    "phone": "+1 (555) 234-5678",
+    "title": "CTO",
+    "companyId": 2,
+    "lastActivity": "2024-01-14T14:45:00Z",
+    "tags": ["champion", "tech-lead"]
+  },
+  {
+    "Id": 3,
+    "firstName": "Emily",
+    "lastName": "Rodriguez",
+    "email": "emily.r@growthco.com",
+    "phone": "+1 (555) 345-6789",
+    "title": "Head of Product",
+    "companyId": 3,
+    "lastActivity": "2024-01-13T09:15:00Z",
+    "tags": ["product-lead", "interested"]
+  },
+  {
+    "Id": 4,
+    "firstName": "David",
+    "lastName": "Kumar",
+    "email": "david.kumar@scalevault.com",
+    "phone": "+1 (555) 456-7890",
+    "title": "Director of Operations",
+    "companyId": 4,
+    "lastActivity": "2024-01-12T16:20:00Z",
+    "tags": ["operations", "evaluating"]
+  },
+  {
+    "Id": 5,
+    "firstName": "Lisa",
+    "lastName": "Thompson",
+    "email": "lisa.thompson@datadrive.ai",
+    "phone": "+1 (555) 567-8901",
+    "title": "CEO",
+    "companyId": 5,
+    "lastActivity": "2024-01-11T11:30:00Z",
+    "tags": ["decision-maker", "hot-lead"]
+  }
+]

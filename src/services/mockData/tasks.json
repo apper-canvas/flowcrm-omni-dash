@@ -1,0 +1,52 @@
+[
+  {
+    "Id": 1,
+    "title": "Send proposal to TechStart",
+    "description": "Prepare and send detailed proposal including technical specifications and pricing breakdown",
+    "dueDate": "2024-01-16T17:00:00Z",
+    "priority": "high",
+    "assigneeId": "user1",
+    "relatedTo": "deal-1",
+    "completed": false
+  },
+  {
+    "Id": 2,
+    "title": "Schedule InnovateLab demo",
+    "description": "Coordinate with Michael's team for comprehensive product demonstration",
+    "dueDate": "2024-01-17T12:00:00Z",
+    "priority": "medium",
+    "assigneeId": "user1",
+    "relatedTo": "deal-2",
+    "completed": false
+  },
+  {
+    "Id": 3,
+    "title": "Follow up with Emily on integration questions",
+    "description": "Address technical questions about API endpoints and data migration process",
+    "dueDate": "2024-01-15T10:00:00Z",
+    "priority": "high",
+    "assigneeId": "user2",
+    "relatedTo": "contact-3",
+    "completed": true
+  },
+  {
+    "Id": 4,
+    "title": "Research ScaleVault's current tech stack",
+    "description": "Analyze their existing solutions to better position our platform benefits",
+    "dueDate": "2024-01-18T16:00:00Z",
+    "priority": "low",
+    "assigneeId": "user1",
+    "relatedTo": "company-4",
+    "completed": false
+  },
+  {
+    "Id": 5,
+    "title": "Prepare onboarding materials for DataDrive",
+    "description": "Create customized onboarding checklist and training schedule for their team",
+    "dueDate": "2024-01-20T14:00:00Z",
+    "priority": "medium",
+    "assigneeId": "user2",
+    "relatedTo": "company-5",
+    "completed": false
+  }
+]

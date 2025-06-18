@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import react-toastify CSS */
+@import 'react-toastify/dist/ReactToastify.css';
+
+/* Ensure scrollbars are visible */
+body {
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin: 0;
+  min-height: 100vh;
+}
+
+/* Prevent horizontal overflow */
+* {
+  max-width: 100%;
+}
+
+/* Main content areas must allow scroll */
+.main-content {
+  overflow-y: auto;
+  height: 100vh;
+}
+
+@layer utilities {
+  /* Only use scrollbar-hide for specific UI elements, never main content */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .gradient-primary {
+    background: linear-gradient(135deg, #5B21B6 0%, #8B5CF6 100%);
+  }
+  
+  .gradient-card {
+    background: linear-gradient(135deg, #8B5CF6 0%, #EC4899 100%);
+  }
+  
+  .health-indicator {
+    background: conic-gradient(#10B981 0deg, #10B981 var(--percentage), #E5E7EB var(--percentage) 360deg);
+  }
+}
