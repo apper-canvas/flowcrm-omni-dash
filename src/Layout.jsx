@@ -1,14 +1,38 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Outlet, NavLink, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import ApperIcon from '@/components/ApperIcon';
 import { routeArray } from '@/config/routes';
 import GlobalSearch from '@/components/organisms/GlobalSearch';
+import NotificationCenter from '@/components/organisms/NotificationCenter';
+import { notificationService } from '@/services';
 
 const Layout = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [notificationCenterOpen, setNotificationCenterOpen] = useState(false);
+  const [unreadCount, setUnreadCount] = useState(0);
   const location = useLocation();
 
+  useEffect(() => {
+    loadUnreadCount();
+    
+    // Check for new notifications every 30 seconds
+    const interval = setInterval(loadUnreadCount, 30000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const loadUnreadCount = async () => {
+    try {
+      const count = await notificationService.getUnreadCount();
+      setUnreadCount(count);
+    } catch (err) {
+      console.error('Failed to load unread count:', err);
+    }
+  };
+
+  const handleNotificationUpdate = () => {
+    loadUnreadCount();
+  };
   const sidebarVariants = {
     hidden: { x: '-100%' },
     visible: { x: 0 }
@@ -132,11 +156,26 @@ const Layout = () => {
             </div>
           </div>
 
-          <div className="flex items-center space-x-4">
-            <button className="p-2 rounded-lg text-surface-600 hover:bg-surface-100 relative">
-              <ApperIcon name="Bell" className="w-5 h-5" />
-              <span className="absolute top-1 right-1 w-2 h-2 bg-accent rounded-full"></span>
-            </button>
+<div className="flex items-center space-x-4">
+            <div className="relative">
+              <button 
+                onClick={() => setNotificationCenterOpen(!notificationCenterOpen)}
+                className="p-2 rounded-lg text-surface-600 hover:bg-surface-100 relative transition-colors"
+              >
+                <ApperIcon name="Bell" className="w-5 h-5" />
+                {unreadCount > 0 && (
+                  <span className="absolute -top-1 -right-1 min-w-[18px] h-[18px] bg-accent text-white text-xs font-medium rounded-full flex items-center justify-center px-1">
+                    {unreadCount > 99 ? '99+' : unreadCount}
+                  </span>
+                )}
+              </button>
+              
+              <NotificationCenter
+                isOpen={notificationCenterOpen}
+                onClose={() => setNotificationCenterOpen(false)}
+                onNotificationUpdate={handleNotificationUpdate}
+              />
+            </div>
             
             <div className="w-8 h-8 bg-gradient-primary rounded-full flex items-center justify-center">
               <span className="text-white text-sm font-medium">JD</span>

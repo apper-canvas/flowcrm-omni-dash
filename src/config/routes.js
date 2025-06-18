@@ -3,7 +3,7 @@ import Contacts from '@/components/pages/Contacts';
 import Deals from '@/components/pages/Deals';
 import Accounts from '@/components/pages/Accounts';
 import Tasks from '@/components/pages/Tasks';
-
+import NotificationPreferences from '@/components/pages/NotificationPreferences';
 export const routes = {
   dashboard: {
     id: 'dashboard',
@@ -33,12 +33,20 @@ export const routes = {
     icon: 'Building2',
     component: Accounts
   },
-  tasks: {
+tasks: {
     id: 'tasks',
     label: 'Tasks',
     path: '/tasks',
     icon: 'CheckSquare',
     component: Tasks
+  },
+  notificationPreferences: {
+    id: 'notificationPreferences',
+    label: 'Notification Preferences',
+    path: '/notification-preferences',
+    icon: 'Settings',
+    component: NotificationPreferences,
+    hidden: true // Don't show in main navigation
   }
 };
 

@@ -1,0 +1,98 @@
+[
+  {
+    "Id": 1,
+    "type": "deal",
+    "title": "Deal moved to negotiation",
+    "message": "Acme Corp deal has progressed to negotiation stage",
+    "relatedId": 1,
+    "relatedType": "deal",
+    "priority": "medium",
+    "read": false,
+    "createdAt": "2024-01-15T10:30:00Z",
+    "category": "deal_update"
+  },
+  {
+    "Id": 2,
+    "type": "activity",
+    "title": "Follow-up call scheduled",
+    "message": "Call with John Smith scheduled for tomorrow at 2 PM",
+    "relatedId": 3,
+    "relatedType": "contact",
+    "priority": "high",
+    "read": false,
+    "createdAt": "2024-01-15T09:15:00Z",
+    "category": "activity_reminder"
+  },
+  {
+    "Id": 3,
+    "type": "account_health",
+    "title": "Account health score declined",
+    "message": "TechStart Inc health score dropped to 45 - requires attention",
+    "relatedId": 2,
+    "relatedType": "company",
+    "priority": "high",
+    "read": false,
+    "createdAt": "2024-01-15T08:45:00Z",
+    "category": "health_alert"
+  },
+  {
+    "Id": 4,
+    "type": "deal",
+    "title": "New deal created",
+    "message": "Enterprise deal worth $50,000 added to pipeline",
+    "relatedId": 4,
+    "relatedType": "deal",
+    "priority": "medium",
+    "read": true,
+    "createdAt": "2024-01-14T16:20:00Z",
+    "category": "deal_created"
+  },
+  {
+    "Id": 5,
+    "type": "activity",
+    "title": "Task overdue",
+    "message": "Send proposal to GlobalTech is now overdue",
+    "relatedId": 2,
+    "relatedType": "task",
+    "priority": "high",
+    "read": false,
+    "createdAt": "2024-01-14T14:00:00Z",
+    "category": "task_overdue"
+  },
+  {
+    "Id": 6,
+    "type": "account_health",
+    "title": "Account health improved",
+    "message": "DataFlow Solutions health score increased to 85",
+    "relatedId": 3,
+    "relatedType": "company",
+    "priority": "low",
+    "read": true,
+    "createdAt": "2024-01-14T11:30:00Z",
+    "category": "health_improvement"
+  },
+  {
+    "Id": 7,
+    "type": "deal",
+    "title": "Deal closed won",
+    "message": "CloudSync deal successfully closed for $25,000",
+    "relatedId": 2,
+    "relatedType": "deal",
+    "priority": "medium",
+    "read": true,
+    "createdAt": "2024-01-13T15:45:00Z",
+    "category": "deal_closed"
+  },
+  {
+    "Id": 8,
+    "type": "activity",
+    "title": "Meeting completed",
+    "message": "Discovery call with InnovateCorp completed successfully",
+    "relatedId": 5,
+    "relatedType": "contact",
+    "priority": "low",
+    "read": true,
+    "createdAt": "2024-01-13T13:20:00Z",
+    "category": "activity_completed"
+  }
+]
