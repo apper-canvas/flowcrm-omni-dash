@@ -15,10 +15,19 @@ const Accounts = () => {
   const [filteredCompanies, setFilteredCompanies] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [searchQuery, setSearchQuery] = useState('');
+const [searchQuery, setSearchQuery] = useState('');
   const [sortBy, setSortBy] = useState('name');
   const [filterBy, setFilterBy] = useState('all');
-
+  const [showCreateModal, setShowCreateModal] = useState(false);
+  const [createFormData, setCreateFormData] = useState({
+    name: '',
+    industry: '',
+    subscriptionTier: 'Basic',
+    size: '',
+    website: '',
+    mrr: 0
+  });
+  const [createLoading, setCreateLoading] = useState(false);
   useEffect(() => {
     const loadData = async () => {
       setLoading(true);
@@ -88,8 +97,36 @@ const Accounts = () => {
     }
     
     setFilteredCompanies(filtered);
+};
+
+  const handleAddAccount = () => {
+    setShowCreateModal(true);
   };
 
+  const handleCreateAccount = async (e) => {
+    e.preventDefault();
+    setCreateLoading(true);
+
+    try {
+      const newCompany = await companyService.create(createFormData);
+      setCompanies(prev => [...prev, newCompany]);
+      setFilteredCompanies(prev => [...prev, newCompany]);
+      setShowCreateModal(false);
+      setCreateFormData({
+        name: '',
+        industry: '',
+        subscriptionTier: 'Basic',
+        size: '',
+        website: '',
+        mrr: 0
+      });
+      toast.success('Account created successfully');
+    } catch (err) {
+      toast.error(err.message || 'Failed to create account');
+    } finally {
+      setCreateLoading(false);
+    }
+  };
   const formatCurrency = (amount) => {
     return new Intl.NumberFormat('en-US', {
       style: 'currency',
@@ -272,7 +309,7 @@ const Accounts = () => {
             <option value="enterprise">Enterprise</option>
           </select>
           
-          <Button variant="primary" icon="Plus">
+<Button variant="primary" icon="Plus" onClick={handleAddAccount}>
             Add Account
           </Button>
         </div>
@@ -301,7 +338,7 @@ const Accounts = () => {
           <p className="text-surface-500 mt-2">
             Start managing your customer accounts by adding your first account
           </p>
-          <Button className="mt-4" icon="Plus">
+<Button className="mt-4" icon="Plus" onClick={handleAddAccount}>
             Add Account
           </Button>
         </div>
@@ -382,6 +419,128 @@ const Accounts = () => {
             );
           })}
         </motion.div>
+)}
+
+      {/* Create Account Modal */}
+      {showCreateModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+          <div className="bg-white rounded-lg max-w-md w-full max-h-[90vh] overflow-y-auto">
+            <div className="p-6">
+              <div className="flex items-center justify-between mb-4">
+                <h2 className="text-lg font-semibold text-surface-900">Add New Account</h2>
+                <button
+                  onClick={() => setShowCreateModal(false)}
+                  className="p-1 rounded hover:bg-surface-100 transition-colors"
+                >
+                  <ApperIcon name="X" className="w-5 h-5 text-surface-400" />
+                </button>
+              </div>
+
+              <form onSubmit={handleCreateAccount} className="space-y-4">
+                <div>
+                  <label className="block text-sm font-medium text-surface-700 mb-1">
+                    Company Name *
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    value={createFormData.name}
+                    onChange={(e) => setCreateFormData(prev => ({...prev, name: e.target.value}))}
+                    className="w-full px-3 py-2 border border-surface-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary"
+                    placeholder="Enter company name"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-surface-700 mb-1">
+                    Industry *
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    value={createFormData.industry}
+                    onChange={(e) => setCreateFormData(prev => ({...prev, industry: e.target.value}))}
+                    className="w-full px-3 py-2 border border-surface-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary"
+                    placeholder="e.g., Technology, Healthcare"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-surface-700 mb-1">
+                    Subscription Tier
+                  </label>
+                  <select
+                    value={createFormData.subscriptionTier}
+                    onChange={(e) => setCreateFormData(prev => ({...prev, subscriptionTier: e.target.value}))}
+                    className="w-full px-3 py-2 border border-surface-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary"
+                  >
+                    <option value="Basic">Basic</option>
+                    <option value="Professional">Professional</option>
+                    <option value="Enterprise">Enterprise</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-surface-700 mb-1">
+                    Company Size
+                  </label>
+                  <input
+                    type="text"
+                    value={createFormData.size}
+                    onChange={(e) => setCreateFormData(prev => ({...prev, size: e.target.value}))}
+                    className="w-full px-3 py-2 border border-surface-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary"
+                    placeholder="e.g., 1-10, 50-100"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-surface-700 mb-1">
+                    Website
+                  </label>
+                  <input
+                    type="url"
+                    value={createFormData.website}
+                    onChange={(e) => setCreateFormData(prev => ({...prev, website: e.target.value}))}
+                    className="w-full px-3 py-2 border border-surface-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary"
+                    placeholder="https://example.com"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-surface-700 mb-1">
+                    Monthly Recurring Revenue
+                  </label>
+                  <input
+                    type="number"
+                    min="0"
+                    value={createFormData.mrr}
+                    onChange={(e) => setCreateFormData(prev => ({...prev, mrr: parseFloat(e.target.value) || 0}))}
+                    className="w-full px-3 py-2 border border-surface-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary"
+                    placeholder="0"
+                  />
+                </div>
+
+                <div className="flex justify-end space-x-3 pt-4">
+                  <Button
+                    type="button"
+                    variant="secondary"
+                    onClick={() => setShowCreateModal(false)}
+                    disabled={createLoading}
+                  >
+                    Cancel
+                  </Button>
+                  <Button
+                    type="submit"
+                    variant="primary"
+                    loading={createLoading}
+                  >
+                    Create Account
+                  </Button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
       )}
     </motion.div>
   );
